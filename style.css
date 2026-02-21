@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background: #f4f4f4;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  color: #003366;
+}
+
+.content {
+  padding: 40px;
+  width: 100%;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+.accordion-btn {
+  background: linear-gradient(to right, #2a5d9f, #6fa8dc);
+  color: white;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.accordion-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+.pdf-icon {
+  width: 20px;
+}
