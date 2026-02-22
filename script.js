@@ -1,4 +1,4 @@
-// Smooth scroll for TOC links
+
 document.querySelectorAll('.toc a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     e.preventDefault();
@@ -11,7 +11,7 @@ document.querySelectorAll('.toc a[href^="#"]').forEach(a => {
   });
 });
 
-// Active section highlight
+
 const tocLinks = Array.from(document.querySelectorAll('.toc a[href^="#"]'));
 const sections = tocLinks
   .map(a => document.querySelector(a.getAttribute('href')))
@@ -30,7 +30,7 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(s => observer.observe(s));
 
-// Chevron toggle on details
+
 document.querySelectorAll('details.acc-item').forEach(d => {
   d.addEventListener('toggle', () => {
     const chev = d.querySelector('.chev');
