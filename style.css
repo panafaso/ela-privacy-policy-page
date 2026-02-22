@@ -1,11 +1,10 @@
-/* --- Base --- */
 :root{
   --ink:#111827;
   --muted:#6b7280;
   --line:#e5e7eb;
   --bg:#ffffff;
-  --nav:#0b1f4a;     /* deep EU/ELA navy */
-  --nav2:#0a3a78;    /* accent */
+  --nav:#0b1f4a;
+  --nav2:#0a3a78;
   --link:#0a58ca;
   --toc-bg:#f3f4f6;
 }
@@ -20,118 +19,46 @@ body{
 }
 
 /* EU top bar */
-.eu-bar{
-  background:#3f3f46;
-  color:#fff;
-  font-size:14px;
-}
+.eu-bar{ background:#3f3f46; color:#fff; font-size:14px; }
 .eu-bar__inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:10px 16px;
-  display:flex;
-  gap:12px;
-  align-items:center;
+  max-width:1200px; margin:0 auto; padding:10px 16px;
+  display:flex; gap:12px; align-items:center;
 }
-.eu-bar__link{
-  color:#fff;
-  text-decoration:underline;
-  margin-left:auto;
-}
+.eu-bar__link{ color:#fff; text-decoration:underline; margin-left:auto; }
 
 /* Header */
-.site-header{
-  border-bottom:1px solid var(--line);
-  background:#fff;
-}
+.site-header{ border-bottom:1px solid var(--line); background:#fff; }
 .header-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:18px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
+  max-width:1200px; margin:0 auto; padding:18px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.brand{ display:flex; align-items:center; gap:12px; }
 .logo-box{
-  width:70px;
-  height:44px;
-  border:2px solid var(--nav);
-  color:var(--nav);
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:70px; height:44px; border:2px solid var(--nav);
+  color:var(--nav); font-weight:800; display:flex; align-items:center; justify-content:center;
   letter-spacing:1px;
 }
-.brand-title{
-  font-weight:700;
-  color:var(--nav);
-}
+.brand-title{ font-weight:700; color:var(--nav); }
 
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.header-actions{ display:flex; align-items:center; gap:10px; }
 .lang-btn{
-  border:1px solid var(--line);
-  background:#fff;
-  padding:8px 10px;
-  border-radius:6px;
-  cursor:pointer;
+  border:1px solid var(--line); background:#fff; padding:8px 10px; border-radius:6px; cursor:pointer;
 }
-.search{
-  display:flex;
-  border:1px solid var(--line);
-  border-radius:6px;
-  overflow:hidden;
-}
-.search input{
-  border:0;
-  padding:9px 10px;
-  width:260px;
-  outline:none;
-}
-.search button{
-  border:0;
-  background:var(--nav);
-  color:#fff;
-  padding:0 12px;
-  cursor:pointer;
-}
+.search{ display:flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+.search input{ border:0; padding:9px 10px; width:260px; outline:none; }
+.search button{ border:0; background:var(--nav); color:#fff; padding:0 12px; cursor:pointer; }
 
 /* Main nav */
 .main-nav{
   background:var(--nav);
-  display:flex;
-  gap:22px;
-  padding:12px 16px;
-  justify-content:center;
-  flex-wrap:wrap;
+  display:flex; gap:22px; padding:12px 16px; justify-content:center; flex-wrap:wrap;
 }
-.main-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-size:14px;
-  letter-spacing:.3px;
-}
+.main-nav a{ color:#fff; text-decoration:none; font-size:14px; letter-spacing:.3px; }
 
 /* Breadcrumbs */
-.breadcrumbs{
-  background:#fff;
-}
+.breadcrumbs{ background:#fff; }
 .breadcrumbs-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:14px 16px;
-  color:var(--muted);
-  font-size:14px;
+  max-width:1200px; margin:0 auto; padding:14px 16px; color:var(--muted); font-size:14px;
 }
 .breadcrumbs a{ color:var(--link); text-decoration:none; }
 .breadcrumbs .sep{ padding:0 6px; }
@@ -151,26 +78,15 @@ body{
 }
 
 /* TOC */
-.toc{
-  position:sticky;
-  top:16px;
-  align-self:start;
-}
+.toc{ position:sticky; top:16px; align-self:start; }
 .toc-card{
   background:var(--toc-bg);
   border:1px solid var(--line);
   border-radius:10px;
   padding:16px;
 }
-.toc-title{
-  font-weight:700;
-  margin-bottom:10px;
-}
-.toc-list{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
+.toc-title{ font-weight:700; margin-bottom:10px; }
+.toc-list{ list-style:none; padding:0; margin:0; }
 .toc-list a{
   display:block;
   padding:8px 8px;
@@ -182,28 +98,24 @@ body{
 .toc-list a:hover{ background:#e9eef7; }
 .toc-list a.active{ background:#dbe8ff; font-weight:700; }
 
-/* Titles like ELA */
+/* Titles */
 .page-title{
   font-size:56px;
   font-weight:700;
   margin:10px 0 26px;
   letter-spacing:-0.5px;
 }
-.section{
-  padding:14px 0 26px;
-}
+.section{ padding:14px 0 26px; }
 .section-title{
   font-size:44px;
-  font-weight:300;          /* thin like screenshot */
+  font-weight:300;
   letter-spacing:-0.2px;
   margin:10px 0 18px;
 }
-.main p, .main li{
-  font-size:16px;
-}
+.main p, .main li{ font-size:16px; }
 .main a{ color:var(--link); }
 
-/* Accordion (collapsible thematic headers) */
+/* Accordion */
 .accordion{
   margin-top:18px;
   display:flex;
@@ -229,11 +141,9 @@ body{
   font-weight:700;
 }
 .acc-summary::-webkit-details-marker{ display:none; }
-.acc-panel{
-  padding:16px;
-}
+.acc-panel{ padding:16px; }
 
-/* Records table like your screenshot (clean, columns) */
+/* Tables */
 .table-wrap{ overflow:auto; }
 .records{
   width:100%;
@@ -270,21 +180,28 @@ body{
   text-decoration:none;
   font-weight:600;
 }
-.pdf-icon{
-  font-size:18px;
-}
+.pdf-icon{ font-size:18px; }
 
-/* PS list: bullet points, NO icons (as you asked) */
+/* ONE privacy statement (no bullets) */
+.ps-single{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--link);
+}
+.ps-icon{ font-size:16px; }
+
+/* MANY privacy statements => bullet list */
 .ps-list{
   margin:0;
   padding-left:18px;
 }
-.ps-list li{ margin:2px 0; }
+.ps-list li{ margin:4px 0; }
 
-/* Footer note */
-.page-footer{
-  margin-top:34px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
+/* Between sections note (ELA placement) */
+.between-note{
+  margin:10px 0 34px;
+  color:var(--ink);
 }
