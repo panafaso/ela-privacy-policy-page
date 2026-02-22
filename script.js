@@ -30,7 +30,7 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(s => observer.observe(s));
 
-// Rotate chevron on details open/close (optional visual)
+// Chevron toggle on details
 document.querySelectorAll('details.acc-item').forEach(d => {
   d.addEventListener('toggle', () => {
     const chev = d.querySelector('.chev');
