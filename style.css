@@ -168,9 +168,9 @@ body{
 .records th:first-child, .records td:first-child{ border-left:1px solid var(--line); }
 .records th:last-child, .records td:last-child{ border-right:1px solid var(--line); }
 
-.col-id{ width:200px; }
-.col-file{ width:210px; }
-.col-ps{ width:320px; }
+.col-id{ width:160px; }       
+.col-file{ width:190px; }     
+.col-ps{ width:340px; } 
 
 /* PDF icon + link styling */
 .pdf-svg{
@@ -202,4 +202,8 @@ body{
 .between-note{
   margin:10px 0 34px;
   color:var(--ink);
+}
+.records th:nth-child(2),
+.records td:nth-child(2){
+  width: 30%;          /* δίνουμε περισσότερο χώρο στο Processing Activity */
 }
