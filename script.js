@@ -1,38 +1,47 @@
-$(document).ready(function () {
-  var groupColumn = 0; // Category
+$(function () {
+  const groupColumn = 4; // Category hidden column
 
-  var table = $('#registerTable').DataTable({
-    columnDefs: [{ visible: false, targets: groupColumn }],
-    order: [[groupColumn, 'asc']],
-    pageLength: 10,
-    lengthMenu: [10, 25, 50],
-    autoWidth: false,
+  const table = $('#registerTable').DataTable({
+    pageLength: 50,
+    lengthMenu: [
+      [50, 100],
+      [50, 100]
+    ],
 
-    drawCallback: function () {
-      var api = this.api();
-      var rows = api.rows({ page: 'current' }).nodes();
-      var last = null;
+    // Order by Category (hidden) then by Reference Number
+    order: [[groupColumn, 'asc'], [0, 'asc']],
 
-      api.column(groupColumn, { page: 'current' })
-        .data()
-        .each(function (group, i) {
-          if (last !== group) {
-            // Visible columns now = 4 (Reference, Processing, Record, Privacy)
-            $(rows).eq(i).before(
-              '<tr class="group"><td colspan="4">' + group + '</td></tr>'
-            );
-            last = group;
-          }
-        });
+    columnDefs: [
+      // hide category column
+      { targets: [groupColumn], visible: false },
+
+      // IMPORTANT: remove sorting (and the little arrows) from Record + Privacy columns
+      { targets: [2, 3], orderable: false, searchable: false },
+
+      // keep sorting only for Reference + Processing
+      { targets: [0, 1], orderable: true },
+
+      // optional: prevent category sorting arrow since hidden anyway
+      { targets: [groupColumn], orderable: false }
+    ],
+
+    rowGroup: {
+      dataSrc: groupColumn,
+      startRender: function (rows, group) {
+        // group comes like "01 - Inspections & Enforcement"
+        const label = group.replace(/^\d+\s*-\s*/,'');
+        return label;
+      }
     }
   });
 
-  $('#registerTable tbody').on('click', 'tr.group', function () {
-    var currentOrder = table.order()[0];
-    if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
-      table.order([[groupColumn, 'desc']]).draw();
+  // Optional: clicking a group header toggles ordering asc/desc on Category
+  $('#registerTable tbody').on('click', 'tr.dtrg-group', function () {
+    const currentOrder = table.order();
+    if (currentOrder.length && currentOrder[0][0] === groupColumn && currentOrder[0][1] === 'asc') {
+      table.order([[groupColumn, 'desc'], [0, 'asc']]).draw();
     } else {
-      table.order([[groupColumn, 'asc']]).draw();
+      table.order([[groupColumn, 'asc'], [0, 'asc']]).draw();
     }
   });
 });
