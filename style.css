@@ -346,3 +346,14 @@ body{
 .dataTables_wrapper .dataTables_filter input:focus{
   border-color:#9bbce6;
 }
+/* group row like DataTables screenshot (grey bar, text in first column) */
+#registerTable tr.group td{
+  background:#efefef !important;
+  font-weight:800;
+  border-top:1px solid #d1d5db !important;
+  border-bottom:1px solid #d1d5db !important;
+}
+
+#registerTable tr.group td:not(.group-cell){
+  color:transparent; /* keep cells empty visually */
+}
