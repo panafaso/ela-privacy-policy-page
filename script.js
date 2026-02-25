@@ -1,40 +1,35 @@
+$(document).ready(function () {
+  const table = $('#registerTable').DataTable({
+    pageLength: 10,
 
-document.querySelectorAll('.toc a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const id = a.getAttribute('href');
-    const el = document.querySelector(id);
-    if (!el) return;
+    orderFixed: [[0, 'asc']], // always group by Category (hidden col 0)
+    order: [[1, 'asc']],      // then order by Reference Number (col 1)
 
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', id);
+    columnDefs: [{ targets: 0, visible: false }],
+
+    drawCallback: function () {
+      const api = this.api();
+      const rows = api.rows({ page: 'current' }).nodes();
+      let last = null;
+
+      api.column(0, { page: 'current' }).data().each(function (group, i) {
+        if (last !== group) {
+          $(rows).eq(i).before(
+            '<tr class="group"><td colspan="4">' + group + '</td></tr>'
+          );
+          last = group;
+        }
+      });
+    }
   });
-});
 
-
-const tocLinks = Array.from(document.querySelectorAll('.toc a[href^="#"]'));
-const sections = tocLinks
-  .map(a => document.querySelector(a.getAttribute('href')))
-  .filter(Boolean);
-
-const setActive = (id) => {
-  tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
-};
-
-const observer = new IntersectionObserver((entries) => {
-  const visible = entries
-    .filter(e => e.isIntersecting)
-    .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-  if (visible?.target?.id) setActive('#' + visible.target.id);
-}, { rootMargin: "-20% 0px -65% 0px", threshold: [0.1, 0.2, 0.4] });
-
-sections.forEach(s => observer.observe(s));
-
-
-document.querySelectorAll('details.acc-item').forEach(d => {
-  d.addEventListener('toggle', () => {
-    const chev = d.querySelector('.chev');
-    if (!chev) return;
-    chev.textContent = d.open ? '▾' : '▸';
+  // optional click to toggle sort direction on category
+  $('#registerTable tbody').on('click', 'tr.group', function () {
+    const currentOrder = table.order()[0];
+    if (currentOrder[0] === 0 && currentOrder[1] === 'asc') {
+      table.order([0, 'desc']).draw();
+    } else {
+      table.order([0, 'asc']).draw();
+    }
   });
 });
