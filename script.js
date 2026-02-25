@@ -2,9 +2,12 @@ $(document).ready(function () {
   const table = $('#registerTable').DataTable({
     pageLength: 10,
 
-    orderFixed: [[0, 'asc']], // always group by Category (hidden col 0)
-    order: [[1, 'asc']],      // then order by Reference Number (col 1)
+    // Always sort by Category (hidden col 0)
+    orderFixed: [[0, 'asc']],
+    // Secondary order (Reference Number)
+    order: [[1, 'asc']],
 
+    // Hide Category column (we show it as group row instead)
     columnDefs: [{ targets: 0, visible: false }],
 
     drawCallback: function () {
@@ -14,22 +17,18 @@ $(document).ready(function () {
 
       api.column(0, { page: 'current' }).data().each(function (group, i) {
         if (last !== group) {
-          $(rows).eq(i).before(
-            '<tr class="group"><td colspan="4">' + group + '</td></tr>'
-          );
+          // colspan = 4 because 4 visible columns (Reference, Activity, Record, Privacy)
+          $(rows).eq(i).before('<tr class="group"><td colspan="4">' + group + '</td></tr>');
           last = group;
         }
       });
     }
   });
 
-  // optional click to toggle sort direction on category
+  // Optional: click group row toggles sort direction
   $('#registerTable tbody').on('click', 'tr.group', function () {
     const currentOrder = table.order()[0];
-    if (currentOrder[0] === 0 && currentOrder[1] === 'asc') {
-      table.order([0, 'desc']).draw();
-    } else {
-      table.order([0, 'asc']).draw();
-    }
+    if (currentOrder[0] === 0 && currentOrder[1] === 'asc') table.order([0, 'desc']).draw();
+    else table.order([0, 'asc']).draw();
   });
 });
