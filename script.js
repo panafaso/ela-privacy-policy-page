@@ -1,12 +1,9 @@
 $(document).ready(function () {
-  // 0 = Category (hidden column used ONLY for grouping)
-  var groupColumn = 0;
+  var groupColumn = 0; // Category
 
   var table = $('#registerTable').DataTable({
-    columnDefs: [
-      { visible: false, targets: groupColumn } // hide ONLY Category
-    ],
-    order: [[groupColumn, 'asc']], // order by Category
+    columnDefs: [{ visible: false, targets: groupColumn }],
+    order: [[groupColumn, 'asc']],
     pageLength: 10,
     lengthMenu: [10, 25, 50],
     autoWidth: false,
@@ -20,7 +17,7 @@ $(document).ready(function () {
         .data()
         .each(function (group, i) {
           if (last !== group) {
-            // We have 4 visible columns now (Reference + 3)
+            // Visible columns now = 4 (Reference, Processing, Record, Privacy)
             $(rows).eq(i).before(
               '<tr class="group"><td colspan="4">' + group + '</td></tr>'
             );
@@ -30,7 +27,6 @@ $(document).ready(function () {
     }
   });
 
-  // Optional: click group row to switch grouping order
   $('#registerTable tbody').on('click', 'tr.group', function () {
     var currentOrder = table.order()[0];
     if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
