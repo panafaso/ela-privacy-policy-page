@@ -9,8 +9,8 @@
   --toc-bg:#f3f4f6;
 
   /* ELA-ish light blues */
-  --group-bg:#dbeafe;     /* light */
-  --group-bg2:#bfdbfe;    /* a bit stronger */
+  --group-bg:#dbeafe;
+  --group-bg2:#bfdbfe;
   --group-ink:#0b1f4a;
 }
 
@@ -24,7 +24,7 @@ body{
   line-height:1.6;
 }
 
-/* top bar */
+/* TOP BAR */
 .eu-bar{ background:#3f3f46; color:#fff; font-size:14px; }
 .eu-bar__inner{
   max-width:1200px;
@@ -40,7 +40,7 @@ body{
   margin-left:auto;
 }
 
-/* header */
+/* HEADER */
 .site-header{
   border-bottom:1px solid var(--line);
   background:#fff;
@@ -96,7 +96,7 @@ body{
   cursor:pointer;
 }
 
-/* nav */
+/* NAV */
 .main-nav{
   background:var(--nav);
   display:flex;
@@ -112,7 +112,7 @@ body{
   letter-spacing:.3px;
 }
 
-/* breadcrumbs */
+/* BREADCRUMBS */
 .breadcrumbs{ background:#fff; }
 .breadcrumbs-inner{
   max-width:1200px;
@@ -124,7 +124,7 @@ body{
 .breadcrumbs a{ color:var(--link); text-decoration:none; }
 .breadcrumbs .sep{ padding:0 6px; }
 
-/* layout */
+/* LAYOUT */
 .page-inner{
   max-width:1200px;
   margin:0 auto;
@@ -138,7 +138,7 @@ body{
   .toc{ position:static; }
 }
 
-/* toc */
+/* TOC */
 .toc{
   position:sticky;
   top:16px;
@@ -162,6 +162,7 @@ body{
 }
 .toc-list a:hover{ background:#e9eef7; }
 
+/* MAIN TYPO */
 .page-title{
   font-size:56px;
   font-weight:700;
@@ -176,24 +177,44 @@ body{
   margin:10px 0 18px;
 }
 
-/* table wrap */
-.table-wrap{ overflow:auto; }
+.main p, .main li{ font-size:16px; }
+.main a{ color:var(--link); }
+.main ul, .main ol{ padding-left:22px; margin-left:0; }
 
-/* --- DataTables + ELA table tweaks --- */
-table.dt-ela{
-  width:100%;
+/* RIGHTS LIST */
+.rights-list{
+  margin:12px 0 18px;
+  padding-left:22px;
+}
+.rights-item{
+  padding:10px 0;
+  border-top:1px dotted var(--line);
+}
+.rights-item:last-child{
+  border-bottom:1px dotted var(--line);
+}
+.right-title{ font-weight:800; }
+.right-sep{ font-weight:800; }
+
+/* NOTE */
+.between-note{
+  margin:22px 0 40px;
+  color:var(--ink);
 }
 
+/* TABLE WRAP */
+.table-wrap{ overflow:auto; }
+
+/* DATA TABLE LOOK */
 table.dt-ela thead th{
   background:#f6f7f9 !important;
   border-bottom:1px solid var(--line) !important;
 }
-
 table.dt-ela tbody td{
   vertical-align:top;
 }
 
-/* group rows (the category bars) */
+/* GROUP ROW (Category bar) */
 tr.group td{
   background: linear-gradient(90deg, var(--group-bg) 0%, var(--group-bg2) 100%) !important;
   color: var(--group-ink) !important;
@@ -204,7 +225,7 @@ tr.group:hover td{
   cursor:pointer;
 }
 
-/* links */
+/* LINKS inside table */
 .pdf-link,
 .ps-single,
 .ps-list a{
@@ -215,12 +236,10 @@ tr.group:hover td{
   font-weight:700;
   color:var(--link);
 }
-
 .pdf-ico{
   font-size:16px;
   line-height:1;
 }
-
 .ps-list{
   margin:0;
   padding-left:18px;
