@@ -19,7 +19,6 @@ body{
   line-height:1.6;
 }
 
-
 .eu-bar{ background:#3f3f46; color:#fff; font-size:14px; }
 
 .eu-bar__inner{
@@ -36,7 +35,6 @@ body{
   text-decoration:underline;
   margin-left:auto;
 }
-
 
 .site-header{
   border-bottom:1px solid var(--line);
@@ -112,7 +110,6 @@ body{
   cursor:pointer;
 }
 
-
 .main-nav{
   background:var(--nav);
   display:flex;
@@ -128,7 +125,6 @@ body{
   font-size:14px;
   letter-spacing:.3px;
 }
-
 
 .breadcrumbs{ background:#fff; }
 
@@ -147,7 +143,6 @@ body{
 
 .breadcrumbs .sep{ padding:0 6px; }
 
-
 .page-inner{
   max-width:1200px;
   margin:0 auto;
@@ -161,7 +156,6 @@ body{
   .page-inner{ grid-template-columns:1fr; }
   .toc{ position:static; }
 }
-
 
 .toc{
   position:sticky;
@@ -199,7 +193,6 @@ body{
 .toc-list a:hover{ background:#e9eef7; }
 .toc-list a.active{ background:#dbe8ff; font-weight:700; }
 
-
 .page-title{
   font-size:56px;
   font-weight:700;
@@ -218,7 +211,6 @@ body{
   margin:10px 0 18px;
 }
 
-
 .main p,
 .main li{
   font-size:16px;
@@ -226,48 +218,16 @@ body{
 
 .main a{ color:var(--link); }
 
-
 .main ul,
 .main ol{
   padding-left:22px;
   margin-left:0;
 }
 
-
-.accordion{
-  margin-top:18px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.acc-item{
-  border:1px solid var(--line);
-  border-radius:10px;
-  overflow:hidden;
-  background:#fff;
-}
-
-.acc-summary{
-  list-style:none;
-  cursor:pointer;
-  user-select:none;
-  padding:14px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:linear-gradient(90deg,#1f4f9a 0%,#7aa7d9 100%);
-  color:#fff;
-  font-weight:700;
-}
-
-.acc-summary::-webkit-details-marker{ display:none; }
-
-.acc-panel{ padding:16px; }
-
-/* TABLE */
+/* TABLE WRAP */
 .table-wrap{ overflow:auto; }
 
+/* Keep your .records, but we will override borders for the datatable below */
 .records{
   width:100%;
   border-collapse:separate;
@@ -275,46 +235,8 @@ body{
   min-width:820px;
 }
 
-.records thead th{
-  background:#f6f7f9;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  padding:12px;
-  font-size:14px;
-  text-align:left;
-}
-
-.records tbody td{
-  border-bottom:1px solid var(--line);
-  padding:12px;
-  vertical-align:top;
-  font-size:14px;
-  text-align:left;
-}
-
-.records th:first-child,
-.records td:first-child{ border-left:1px solid var(--line); }
-
-.records th:last-child,
-.records td:last-child{ border-right:1px solid var(--line); }
-
-.col-id{ width:160px; }
-.col-file{ width:190px; }
-.col-ps{ width:340px; }
-
-.records th:nth-child(2),
-.records td:nth-child(2){ width:30%; }
-
 /* LINKS */
-.pdf-svg{
-  width:18px;
-  height:18px;
-  flex:0 0 auto;
-}
-
-.pdf-link,
-.ps-single,
-.ps-list a{
+.dt-link{
   display:inline-flex;
   align-items:center;
   gap:8px;
@@ -322,63 +244,78 @@ body{
   font-weight:600;
   color:var(--link);
 }
+.dt-link:hover{ text-decoration:underline; }
 
-.ps-list{
-  margin:0;
-  padding-left:18px;
+/* CSS-only PDF icon */
+.pdf-ico{
+  width:18px;
+  height:18px;
+  display:inline-block;
+  border:2px solid #111;
+  border-radius:3px;
+  position:relative;
+}
+.pdf-ico::after{
+  content:"";
+  position:absolute;
+  right:-2px;
+  top:-2px;
+  width:8px;
+  height:8px;
+  background:#fff;
+  border-left:2px solid #111;
+  border-bottom:2px solid #111;
+  transform:rotate(45deg);
 }
 
-.ps-list li{ margin:6px 0; }
-
-/* RIGHTS LIST */
-.rights-list{
-  margin:12px 0 18px;
-  padding-left:22px;
+/* ✅ DataTables clean look (like your screenshot, not excel borders) */
+#registerTable{
+  width:100% !important;
+  border-collapse:separate !important;
+  border-spacing:0 !important;
 }
 
-.rights-item{
-  padding:10px 0;
-  border-top:1px dotted var(--line);
-}
-
-.rights-item:last-child{
-  border-bottom:1px dotted var(--line);
-}
-
-.right-title{ font-weight:800; }
-.right-sep{ font-weight:800; }
-
-.between-note{
-  margin:22px 0 40px;
-  color:var(--ink);
-}
-
-/* Hide Category column (used only for grouping) */
+/* Hide Category column (we use it only for grouping) */
 #registerTable th:first-child,
-#registerTable td:first-child {
-  display: none;
+#registerTable td:first-child{
+  display:none;
 }
 
-/* Group row (blue, not too dark) */
-#registerTable tr.group td {
-  background: linear-gradient(90deg, #2f6fb8 0%, #79addd 100%);
-  color: #fff;
-  font-weight: 700;
-  border-top: 1px solid #cfd8e3;
-  border-bottom: 1px solid #cfd8e3;
-  padding: 12px !important;
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+/* Header */
+#registerTable thead th{
+  background:#f9fafb !important;
+  color:#111827;
+  font-weight:800;
+  border-bottom:1px solid #d1d5db !important;
+  padding:14px 12px !important;
 }
 
-/* Make DataTables controls match your site a bit more */
+/* Body cells */
+#registerTable tbody td{
+  background:#fff !important;
+  border-bottom:1px solid #e5e7eb !important;
+  padding:14px 12px !important;
+  vertical-align:top;
+}
+
+/* Group row (category row) - like your screenshot (grey) */
+#registerTable tr.group td{
+  background:#efefef !important;
+  color:#111827 !important;
+  font-weight:800;
+  border-top:1px solid #d1d5db !important;
+  border-bottom:1px solid #d1d5db !important;
+  padding:12px 12px !important;
+}
+
+/* DataTables controls to look nicer */
 .dataTables_wrapper .dataTables_length select,
-.dataTables_wrapper .dataTables_filter input {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 6px 8px;
-  outline: none;
+.dataTables_wrapper .dataTables_filter input{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 10px;
+  outline:none;
 }
-.dataTables_wrapper .dataTables_filter input:focus {
-  border-color: #79addd;
+.dataTables_wrapper .dataTables_filter input:focus{
+  border-color:#9bbce6;
 }
