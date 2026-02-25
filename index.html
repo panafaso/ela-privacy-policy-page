@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Privacy policy | European Labour Authority</title>
+
+  <!-- DataTables (for grouping like the example you sent) -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+
+  <!-- Your styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -16,7 +21,6 @@
       <a class="eu-bar__link" href="#" aria-label="How do you know?">How do you know?</a>
     </div>
   </div>
-
 
   <header class="site-header">
     <div class="header-inner">
@@ -99,40 +103,40 @@
 
           <p>When your personal information is processed by ELA (or any EU institution), you are entitled to the following rights under Articles 17–24 of Regulation (EU) 2018/1725:</p>
 
-          
           <ul class="rights-list">
-  <li class="rights-item">
-    <span class="right-title">Right to be informed</span><span class="right-sep">: </span><span class="right-desc">You have the right to be informed about the processing of your personal data.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right to be informed</span><span class="right-sep">: </span><span class="right-desc">You have the right to be informed about the processing of your personal data.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right of access</span><span class="right-sep">: </span><span class="right-desc">You have the right to obtain confirmation as to whether your personal data are being processed and to access those data.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right of access</span><span class="right-sep">: </span><span class="right-desc">You have the right to obtain confirmation as to whether your personal data are being processed and to access those data.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right to rectification</span><span class="right-sep">: </span><span class="right-desc">You have the right to have inaccurate or incomplete personal data corrected without undue delay.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right to rectification</span><span class="right-sep">: </span><span class="right-desc">You have the right to have inaccurate or incomplete personal data corrected without undue delay.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right to erasure ("right to be forgotten")</span><span class="right-sep">: </span><span class="right-desc">Under certain conditions, you may request the deletion of your personal data.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right to erasure ("right to be forgotten")</span><span class="right-sep">: </span><span class="right-desc">Under certain conditions, you may request the deletion of your personal data.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right to restriction of processing</span><span class="right-sep">: </span><span class="right-desc">Under specific circumstances, you may request that the processing of your personal data be restricted.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right to restriction of processing</span><span class="right-sep">: </span><span class="right-desc">Under specific circumstances, you may request that the processing of your personal data be restricted.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right to object</span><span class="right-sep">: </span><span class="right-desc">Where applicable, you may object at any time to the processing of your personal data on grounds relating to your particular situation.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right to object</span><span class="right-sep">: </span><span class="right-desc">Where applicable, you may object at any time to the processing of your personal data on grounds relating to your particular situation.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right to data portability</span><span class="right-sep">: </span><span class="right-desc">Where applicable, you have the right to receive your personal data in a structured, commonly used and machine-readable format and to transmit those data to another controller.</span>
-  </li>
+            <li class="rights-item">
+              <span class="right-title">Right to data portability</span><span class="right-sep">: </span><span class="right-desc">Where applicable, you have the right to receive your personal data in a structured, commonly used and machine-readable format and to transmit those data to another controller.</span>
+            </li>
 
-  <li class="rights-item">
-    <span class="right-title">Right not to be subject to automated decision-making</span><span class="right-sep">: </span><span class="right-desc">You have the right not to be subject to decisions based solely on automated processing, including profiling, which produce legal effects concerning you or similarly significantly affect you.</span>
-  </li>
-</ul>
+            <li class="rights-item">
+              <span class="right-title">Right not to be subject to automated decision-making</span><span class="right-sep">: </span><span class="right-desc">You have the right not to be subject to decisions based solely on automated processing, including profiling, which produce legal effects concerning you or similarly significantly affect you.</span>
+            </li>
+          </ul>
+
           <p>You can request that we communicate, where possible, any changes to your personal data to other parties to whom your data have been disclosed.</p>
 
           <p>We will consider your request, take a decision and communicate it to you without undue delay and in any event within one month of receipt of the request. That period may be extended by two further months where necessary.</p>
@@ -177,6 +181,7 @@
             Website: <a href="https://edps.europa.eu/_en">https://edps.europa.eu/_en</a></p>
         </section>
 
+        <!-- ✅ REGISTER SECTION REPLACED: Accordion removed, one DataTable with category group rows -->
         <section id="s5" class="section">
           <h2 class="section-title">Register of the European Labour Authority</h2>
 
@@ -185,530 +190,178 @@
 
           <p>The register, organised by categories reflecting ELA’s fields of activity, can be consulted below to understand how ELA processes personal data:</p>
 
-          <div class="accordion" data-accordion>
+          <div class="table-wrap">
+            <table id="registerTable" class="records display">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th class="col-id">Reference Number</th>
+                  <th>Processing Activity</th>
+                  <th class="col-file">Record of Processing Activity</th>
+                  <th class="col-ps">Privacy Statement(s)</th>
+                </tr>
+              </thead>
 
-            <details class="acc-item" open>
-              <summary class="acc-summary">
-                <span>Inspections &amp; Enforcement</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2022-0029</td>
-                        <td>ELA concerted and joint inspections</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
+              <tbody>
+                <!-- Inspections & Enforcement -->
+                <tr>
+                  <td>Inspections &amp; Enforcement</td>
+                  <td>DPR-ELA-2022-0029</td>
+                  <td>ELA concerted and joint inspections</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
 
-                      <tr>
-                        <td>DPR-ELA-2025-0009</td>
-                        <td>Database related to the coordination and support of concerted and joint inspections - Inspections App</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
+                <tr>
+                  <td>Inspections &amp; Enforcement</td>
+                  <td>DPR-ELA-2025-0009</td>
+                  <td>Database related to the coordination and support of concerted and joint inspections - Inspections App</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
 
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>EURES &amp; Labour Mobility</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2022-0009</td>
-                        <td>European Network of Employment Services (EURES) (jobseekers and employers)</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <ul class="ps-list">
-                            <li><a href="#" target="_blank" rel="noopener">Privacy Statement jobseekers</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Privacy Statement data employers</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Privacy Statement EURES Helpdesk</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Privacy Statement EURES Newsletters</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Privacy Statement Chats with EURES Advisers</a></li>
-                          </ul>
-                        </td>
-                      </tr>
+                <!-- EURES & Labour Mobility -->
+                <tr>
+                  <td>EURES &amp; Labour Mobility</td>
+                  <td>DPR-ELA-2022-0009</td>
+                  <td>European Network of Employment Services (EURES) (jobseekers and employers)</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <ul class="ps-list">
+                      <li><a href="#" target="_blank" rel="noopener">Privacy Statement jobseekers</a></li>
+                      <li><a href="#" target="_blank" rel="noopener">Privacy Statement data employers</a></li>
+                      <li><a href="#" target="_blank" rel="noopener">Privacy Statement EURES Helpdesk</a></li>
+                      <li><a href="#" target="_blank" rel="noopener">Privacy Statement EURES Newsletters</a></li>
+                      <li><a href="#" target="_blank" rel="noopener">Privacy Statement Chats with EURES Advisers</a></li>
+                    </ul>
+                  </td>
+                </tr>
 
-                      <tr>
-                        <td>DPR-ELA-2023-0026</td>
-                        <td>EURES Chat service</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
+                <tr>
+                  <td>EURES &amp; Labour Mobility</td>
+                  <td>DPR-ELA-2023-0026</td>
+                  <td>EURES Chat service</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
 
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>Research &amp; Policy Analysis</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2026-0001</td>
-                        <td>ELA research activities related to analysis and risk assessment strategic projects</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
+                <!-- Research & Policy Analysis -->
+                <tr>
+                  <td>Research &amp; Policy Analysis</td>
+                  <td>DPR-ELA-2026-0001</td>
+                  <td>ELA research activities related to analysis and risk assessment strategic projects</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
 
-                      <tr>
-                        <td>DPR-ELA-2024-002</td>
-                        <td>ELA operational workload analysis</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
+                <tr>
+                  <td>Research &amp; Policy Analysis</td>
+                  <td>DPR-ELA-2024-002</td>
+                  <td>ELA operational workload analysis</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
 
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>Communication, Events &amp; Stakeholder Engagement</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2024-0008</td>
-                        <td>ELA Events Application</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
+                <!-- AI Systems -->
+                <tr>
+                  <td>AI Systems</td>
+                  <td>DPR-ELA-2026-0002</td>
+                  <td>ELA ESSbot (AI powered chatbot on SSC) testing phase</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
 
-                      <tr>
-                        <td>DPR-ELA-2023-0010</td>
-                        <td>Subscription to ELA electronic newsletters and notifications via Newsroom</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>Governance, Legal &amp; Data Protection</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2024-001</td>
-                        <td>CIRCABC at the European Labour Authority</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <ul class="ps-list">
-                            <li><a href="#" target="_blank" rel="noopener">ELA Communication campaigns - CIRCABC</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">ELA HORECA campaign - CIRCABC</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">ELA Construction Campaign</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">ELA Stakeholder Group – CIRCABC</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">ELA Management board - CIRCABC</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">European Platform tackling undeclared work - CIRCABC</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">ELA Digitalisation Promotion Group – CIRCABC Interest Group</a></li>
-                          </ul>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>DPR-ELA-2022-0001</td>
-                        <td>Register of personal data breaches in the European Labour Authority</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>Human Resources &amp; Staff Management</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2022-0010</td>
-                        <td>Selection and recruitment of staff, interimaires, SNEs, NLOs, and trainees</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>DPR-ELA-2024-0017</td>
-                        <td>Processing personal data within the framework of the renewal of temporary and contract agent’s contracts at ELA</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>Finance, Budget &amp; Procurement</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2023-0015</td>
-                        <td>Accounting activities at the European Labour Authority</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>DPR-ELA-2022-0003</td>
-                        <td>Managing award procedures for procurement and the execution of contracts</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>Digital Infrastructure &amp; Security</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>Processing Activity</th>
-                        <th class="col-file">Record of Processing Activity</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2022-0011</td>
-                        <td>Email system at ELA</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>DPR-ELA-2022-0012</td>
-                        <td>ELA Microsoft Office 365 environment</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <ul class="ps-list">
-                            <li><a href="#" target="_blank" rel="noopener">Privacy statement – internal users</a></li>
-                            <li><a href="#" target="_blank" rel="noopener">Privacy statement – external users</a></li>
-                          </ul>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-
-            
-            <details class="acc-item">
-              <summary class="acc-summary">
-                <span>AI Systems</span>
-                <span class="chev" aria-hidden="true">▾</span>
-              </summary>
-
-              <div class="acc-panel">
-                <div class="table-wrap">
-                  <table class="records">
-                    <thead>
-                      <tr>
-                        <th class="col-id">Reference Number</th>
-                        <th>AI System</th>
-                        <th class="col-file">Record file</th>
-                        <th class="col-ps">Privacy Statement(s)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>DPR-ELA-2026-0002</td>
-                        <td>ELA ESSbot (AI powered chatbot on SSC) testing phase</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>DPR-ELA-2023-0030</td>
-                        <td>Microsoft 365 Copilot at ELA</td>
-                        <td>
-                          <a class="pdf-link" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Record</span>
-                          </a>
-                        </td>
-                        <td>
-                          <a class="ps-single" href="#" target="_blank" rel="noopener">
-                            <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
-                            <span>Privacy statement</span>
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </details>
-
+                <tr>
+                  <td>AI Systems</td>
+                  <td>DPR-ELA-2023-0030</td>
+                  <td>Microsoft 365 Copilot at ELA</td>
+                  <td>
+                    <a class="pdf-link" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Record</span>
+                    </a>
+                  </td>
+                  <td>
+                    <a class="ps-single" href="#" target="_blank" rel="noopener">
+                      <img class="pdf-svg" src="file-earmark-pdf.svg" alt="">
+                      <span>Privacy statement</span>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
-</section>
 
-<p class="between-note">
-  For more information about how your personal data might be used when you visit this website, read our website data protection notice page.
-  For more information about our use of cookies please go to our cookies page.
-</p>
+        <p class="between-note">
+          For more information about how your personal data might be used when you visit this website, read our website data protection notice page.
+          For more information about our use of cookies please go to our cookies page.
+        </p>
 
         <section id="s7" class="section">
           <h2 class="section-title">Social media moderation policy</h2>
@@ -719,10 +372,11 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- DataTables JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
 
+  <!-- Your script.js (will initialize and add the group rows) -->
   <script src="script.js"></script>
 </body>
 </html>
