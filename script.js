@@ -1,31 +1,35 @@
 $(document).ready(function () {
+  // helper: read grouping value from each row
+  function categoryForRow(rowNode) {
+    return $(rowNode).attr('data-category') || '';
+  }
+
   const table = $('#registerTable').DataTable({
     pageLength: 10,
-    orderFixed: [[0, 'asc']], // group by Category (hidden)
-    order: [[1, 'asc']],      // then sort by Reference Number
-    columnDefs: [{ targets: 0, visible: false }],
-
+    order: [[0, 'asc']], // sort by Reference Number (like normal)
     drawCallback: function () {
       const api = this.api();
       const rows = api.rows({ page: 'current' }).nodes();
+
       let last = null;
 
-      api.column(0, { page: 'current' }).data().each(function (group, i) {
-        if (last !== group) {
-          // 4 visible columns: Reference, Processing, Record, Privacy
-          $(rows).eq(i).before(
-            '<tr class="group"><td colspan="4">' + group + '</td></tr>'
-          );
+      api.rows({ page: 'current' }).every(function (rowIdx) {
+        const rowNode = this.node();
+        const group = categoryForRow(rowNode);
+
+        if (group && group !== last) {
+          // ✅ Insert a group row where the category appears in FIRST column
+          $(rowNode).before(`
+            <tr class="group">
+              <td class="group-cell">${group}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          `);
           last = group;
         }
       });
     }
-  });
-
-  // optional: click group row to toggle sort direction
-  $('#registerTable tbody').on('click', 'tr.group', function () {
-    const currentOrder = table.order()[0];
-    if (currentOrder[0] === 0 && currentOrder[1] === 'asc') table.order([0, 'desc']).draw();
-    else table.order([0, 'asc']).draw();
   });
 });
