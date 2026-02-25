@@ -1,35 +1,42 @@
 $(document).ready(function () {
-  // helper: read grouping value from each row
-  function categoryForRow(rowNode) {
-    return $(rowNode).attr('data-category') || '';
-  }
+  // 0 = Category (hidden column used ONLY for grouping)
+  var groupColumn = 0;
 
-  const table = $('#registerTable').DataTable({
+  var table = $('#registerTable').DataTable({
+    columnDefs: [
+      { visible: false, targets: groupColumn } // hide ONLY Category
+    ],
+    order: [[groupColumn, 'asc']], // order by Category
     pageLength: 10,
-    order: [[0, 'asc']], // sort by Reference Number (like normal)
+    lengthMenu: [10, 25, 50],
+    autoWidth: false,
+
     drawCallback: function () {
-      const api = this.api();
-      const rows = api.rows({ page: 'current' }).nodes();
+      var api = this.api();
+      var rows = api.rows({ page: 'current' }).nodes();
+      var last = null;
 
-      let last = null;
+      api.column(groupColumn, { page: 'current' })
+        .data()
+        .each(function (group, i) {
+          if (last !== group) {
+            // We have 4 visible columns now (Reference + 3)
+            $(rows).eq(i).before(
+              '<tr class="group"><td colspan="4">' + group + '</td></tr>'
+            );
+            last = group;
+          }
+        });
+    }
+  });
 
-      api.rows({ page: 'current' }).every(function (rowIdx) {
-        const rowNode = this.node();
-        const group = categoryForRow(rowNode);
-
-        if (group && group !== last) {
-          // ✅ Insert a group row where the category appears in FIRST column
-          $(rowNode).before(`
-            <tr class="group">
-              <td class="group-cell">${group}</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          `);
-          last = group;
-        }
-      });
+  // Optional: click group row to switch grouping order
+  $('#registerTable tbody').on('click', 'tr.group', function () {
+    var currentOrder = table.order()[0];
+    if (currentOrder[0] === groupColumn && currentOrder[1] === 'asc') {
+      table.order([[groupColumn, 'desc']]).draw();
+    } else {
+      table.order([[groupColumn, 'asc']]).draw();
     }
   });
 });
