@@ -394,3 +394,43 @@ tr.dtrg-group td{
   align-items:center;
   gap:10px;
 }
+/* Multiple PS bullets: NO icon, nice alignment */
+.ps-bullets{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.ps-bullets li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:0;
+  margin:0;
+}
+
+/* bullet dot */
+.ps-bullets li::before{
+  content:"•";
+  display:inline-block;
+  line-height:1.35;
+  margin-top:2px;
+  color:var(--ink);
+}
+
+/* bullet links same typography as single ps-link text */
+.ps-bullet-link{
+  font-weight:600;
+  color:var(--link);
+  text-decoration:none;
+  font-size:14px;
+  line-height:1.35;
+}
+
+/* SAFETY: even if an img slips in by mistake, hide it inside bullets */
+.ps-bullets img{
+  display:none !important;
+}
