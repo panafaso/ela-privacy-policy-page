@@ -1,146 +1,124 @@
-// ===============================
-// DATA TABLE (Register)
-// ===============================
-$(document).ready(function () {
-
-  const groupColumn = 4; // hidden Category column
+$(function () {
+  /* =========================
+     1) DATATABLES / ROWGROUP
+  ========================== */
+  const groupColumn = 4; // Category hidden column
 
   const table = $('#registerTable').DataTable({
-
     pageLength: 50,
-
     lengthMenu: [
       [50, 100],
       [50, 100]
     ],
 
+    // Order by Category (hidden) then by Reference Number
     order: [[groupColumn, 'asc'], [0, 'asc']],
 
     columnDefs: [
-      { targets: [groupColumn], visible: false },
-
-      // Disable sorting + search on Record & Privacy columns
-      { targets: [2, 3], orderable: false, searchable: false },
-
-      // Enable only for Reference + Processing
-      { targets: [0, 1], orderable: true },
-
+      { targets: [groupColumn], visible: false },                 // hide category column
+      { targets: [2, 3], orderable: false, searchable: false },   // no sorting/search for Record + PS
+      { targets: [0, 1], orderable: true },                       // keep sorting for Reference + Processing
       { targets: [groupColumn], orderable: false }
     ],
 
     rowGroup: {
       dataSrc: groupColumn,
       startRender: function (rows, group) {
-        // Remove numeric prefix (01 - ...)
+        // group like "01 - Inspections & Enforcement"
         return group.replace(/^\d+\s*-\s*/, '');
       }
     }
   });
 
-  // Toggle group ordering when clicking group header
+  // Optional: clicking a group header toggles ordering asc/desc on Category
   $('#registerTable tbody').on('click', 'tr.dtrg-group', function () {
     const currentOrder = table.order();
-
-    if (currentOrder.length &&
-        currentOrder[0][0] === groupColumn &&
-        currentOrder[0][1] === 'asc') {
-
+    if (currentOrder.length && currentOrder[0][0] === groupColumn && currentOrder[0][1] === 'asc') {
       table.order([[groupColumn, 'desc'], [0, 'asc']]).draw();
-
     } else {
-
       table.order([[groupColumn, 'asc'], [0, 'asc']]).draw();
     }
   });
 
-});
 
+  /* =========================
+     2) TOC ACTIVE HIGHLIGHT
+        + SMOOTH SCROLL (offset)
+  ========================== */
+  const headerOffset = 110; // ίδιο με scroll-margin-top περίπου
+  const tocLinks = Array.from(document.querySelectorAll('.toc-list a[href^="#"]'))
+    .filter(a => document.querySelector(a.getAttribute('href')));
 
-// ===============================
-// TOC + SMOOTH SCROLL + SCROLL SPY
-// ===============================
-document.addEventListener("DOMContentLoaded", function () {
-
-  const tocLinks = Array.from(document.querySelectorAll(".toc-list a"));
   const sections = tocLinks
-    .map(link => document.querySelector(link.getAttribute("href")))
+    .map(a => document.querySelector(a.getAttribute('href')))
     .filter(Boolean);
 
-  // --- Click smooth scroll ---
-  tocLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
+  function setActiveToc(targetId) {
+    tocLinks.forEach(a => {
+      const isActive = a.getAttribute('href') === targetId;
+      a.classList.toggle('active', isActive);
+      // δεν αλλάζουμε font-weight εδώ για να μην γίνεται reflow
+    });
+  }
 
-      const target = document.querySelector(this.getAttribute("href"));
-      if (!target) return;
-
+  // Click -> smooth scroll με offset (χωρίς απότομο jump)
+  tocLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
       e.preventDefault();
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (!el) return;
 
-      // Remove active from all
-      tocLinks.forEach(l => l.classList.remove("active"));
-      this.classList.add("active");
+      const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      setActiveToc(id);
+      history.replaceState(null, '', id); // ενημερώνει το hash χωρίς jump
     });
   });
 
-  // --- Scroll Spy (auto highlight while scrolling) ---
+  // Scroll spy -> βάφει το σωστό TOC item καθώς σκρολάρεις
   const observer = new IntersectionObserver((entries) => {
+    // βρίσκουμε το πιο “κοντά” section που είναι visible
+    const visible = entries
+      .filter(en => en.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    const visibleSections = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-    if (visibleSections.length > 0) {
-      const id = visibleSections[0].target.id;
-
-      tocLinks.forEach(link => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === "#" + id
-        );
-      });
+    if (visible && visible.target && visible.target.id) {
+      setActiveToc('#' + visible.target.id);
     }
-
   }, {
     root: null,
-    threshold: [0.3, 0.5, 0.7],
-    rootMargin: "-15% 0px -65% 0px"
+    // “σπρώχνουμε” το detection λίγο πιο κάτω λόγω header
+    rootMargin: `-${headerOffset}px 0px -55% 0px`,
+    threshold: [0.15, 0.25, 0.4, 0.6]
   });
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach(sec => observer.observe(sec));
 
-});
+  // Αν ανοίξει η σελίδα με hash (#s2 κτλ), βάφ’το σωστά
+  if (window.location.hash && document.querySelector(window.location.hash)) {
+    setActiveToc(window.location.hash);
+  } else if (tocLinks.length) {
+    setActiveToc(tocLinks[0].getAttribute('href'));
+  }
 
 
-// ===============================
-// BACK TO TOP
-// ===============================
-document.addEventListener("DOMContentLoaded", function () {
+  /* =========================
+     3) BACK TO TOP (show/hide)
+  ========================== */
+  const backBtn = document.getElementById('backToTop');
+  if (backBtn) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 450) backBtn.classList.add('show');
+      else backBtn.classList.remove('show');
+    };
 
-  const backToTop = document.getElementById("backToTop");
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
 
-  if (!backToTop) return;
-
-  const toggleVisibility = () => {
-    if (window.scrollY > 500) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  };
-
-  window.addEventListener("scroll", toggleVisibility, { passive: true });
-
-  toggleVisibility();
-
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
-
+  }
 });
