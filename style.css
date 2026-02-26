@@ -7,7 +7,8 @@
   --nav2:#0a3a78;
   --link:#0a58ca;
   --toc-bg:#f3f4f6;
-  --group:#cfe4ff; /* light ELA-like blue */
+  --group:#cfe4ff;
+  --toc-active:#dbe8ff;
 }
 
 *{ box-sizing:border-box; }
@@ -16,9 +17,11 @@ body{
   margin:0;
   color:var(--ink);
   background:var(--bg);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.6;
 }
+
+/* ================= HEADER ================= */
 
 .eu-bar{ background:#3f3f46; color:#fff; font-size:14px; }
 
@@ -47,9 +50,8 @@ body{
   margin:0 auto;
   padding:18px 16px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:16px;
+  align-items:center;
 }
 
 .brand{
@@ -67,7 +69,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  letter-spacing:1px;
 }
 
 .brand-title{
@@ -75,74 +76,21 @@ body{
   color:var(--nav);
 }
 
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.lang-btn{
-  border:1px solid var(--line);
-  background:#fff;
-  padding:8px 10px;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-.search{
-  display:flex;
-  border:1px solid var(--line);
-  border-radius:6px;
-  overflow:hidden;
-}
-
-.search input{
-  border:0;
-  padding:9px 10px;
-  width:260px;
-  outline:none;
-}
-
-.search button{
-  border:0;
-  background:var(--nav);
-  color:#fff;
-  padding:0 12px;
-  cursor:pointer;
-}
-
 .main-nav{
   background:var(--nav);
   display:flex;
-  gap:22px;
-  padding:12px 16px;
   justify-content:center;
-  flex-wrap:wrap;
+  gap:22px;
+  padding:12px;
 }
 
 .main-nav a{
   color:#fff;
   text-decoration:none;
   font-size:14px;
-  letter-spacing:.3px;
 }
 
-.breadcrumbs{ background:#fff; }
-
-.breadcrumbs-inner{
-  max-width:1200px;
-  margin:0 auto;
-  padding:14px 16px;
-  color:var(--muted);
-  font-size:14px;
-}
-
-.breadcrumbs a{
-  color:var(--link);
-  text-decoration:none;
-}
-
-.breadcrumbs .sep{ padding:0 6px; }
+/* ================= LAYOUT ================= */
 
 .page-inner{
   max-width:1200px;
@@ -155,8 +103,9 @@ body{
 
 @media (max-width:980px){
   .page-inner{ grid-template-columns:1fr; }
-  .toc{ position:static; }
 }
+
+/* ================= TOC ================= */
 
 .toc{
   position:sticky;
@@ -167,7 +116,7 @@ body{
 .toc-card{
   background:var(--toc-bg);
   border:1px solid var(--line);
-  border-radius:10px;
+  border-radius:12px;
   padding:16px;
 }
 
@@ -178,57 +127,47 @@ body{
 
 .toc-list{
   list-style:none;
-  padding:0;
   margin:0;
+  padding:0;
 }
 
 .toc-list a{
   display:block;
-  padding:8px;
-  border-radius:8px;
+  padding:10px 12px;
+  border-radius:10px;
   color:var(--nav2);
   text-decoration:none;
   font-size:14px;
+  transition:0.2s;
 }
 
-.toc-list a:hover{ background:#e9eef7; }
-.toc-list a.active{ background:#dbe8ff; font-weight:700; }
+.toc-list a:hover{
+  background:#e9eef7;
+}
+
+.toc-list a.active{
+  background:var(--toc-active);
+  font-weight:700;
+}
+
+/* ================= TITLES ================= */
 
 .page-title{
   font-size:56px;
   font-weight:700;
-  margin:10px 0 26px;
-  letter-spacing:-0.5px;
-}
-
-.section{
-  padding:22px 0 32px;
+  margin-bottom:26px;
 }
 
 .section-title{
-  font-size:44px;
+  font-size:42px;
   font-weight:300;
-  letter-spacing:-0.2px;
-  margin:10px 0 18px;
+  margin-bottom:18px;
 }
 
-.main p,
-.main li{
-  font-size:16px;
-}
+/* ================= TABLE ================= */
 
-.main a{ color:var(--link); }
-
-.main ul,
-.main ol{
-  padding-left:22px;
-  margin-left:0;
-}
-
-/* TABLE WRAP */
 .table-wrap{ overflow:auto; }
 
-/* We keep your "records" class and make it work well with DataTables */
 .records{
   width:100% !important;
   border-collapse:separate;
@@ -236,42 +175,32 @@ body{
   min-width:920px;
 }
 
-/* Header */
 .records thead th{
   background:#f6f7f9;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  padding:12px 12px;
+  padding:12px;
   font-size:14px;
   text-align:left;
-  vertical-align:middle;
   white-space:nowrap;
 }
 
-/* Body */
 .records tbody td{
   border-bottom:1px solid var(--line);
   padding:14px 12px;
-  vertical-align:top;
   font-size:14px;
-  text-align:left;
+  vertical-align:top;
 }
 
-/* Borders left/right */
-.records th:first-child,
-.records td:first-child{ border-left:1px solid var(--line); }
-
-.records th:last-child,
-.records td:last-child{ border-right:1px solid var(--line); }
-
-/* Column widths (Processing wider, Record/PS narrower) */
-.col-ref{ width:210px; }
-.col-rec{ width:160px; }
+/* Column widths */
+.col-ref{ width:220px; }
+.col-act{ width:auto; }              /* wider processing */
+.col-rec{ width:150px; }
 .col-ps{ width:260px; }
-.col-act{ width:auto; }
 .col-cat{ width:0; }
 
-/* LINKS with ONLY your pdf icon */
+/* ================= LINKS ================= */
+
 .pdf-svg{
   width:18px;
   height:18px;
@@ -286,18 +215,26 @@ body{
   text-decoration:none;
   font-weight:600;
   color:var(--link);
-  font-size:14px;              /* force same size everywhere */
+  font-size:14px;
   line-height:1.35;
 }
 
-/* Bullet list inside Privacy Statement(s) */
+/* ================= PRIVACY STATEMENTS ================= */
+
+/* SINGLE privacy statement → has icon */
+.ps-link img{
+  display:inline-block;
+}
+
+/* MULTIPLE privacy statements → bullets, NO icon */
+
 .ps-bullets{
   list-style:none;
   margin:0;
   padding:0;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
 }
 
 .ps-bullets li{
@@ -306,82 +243,53 @@ body{
   gap:10px;
 }
 
-/* small bullet dot like screenshot */
+/* Bullet dot aligned perfectly */
 .ps-bullets li::before{
   content:"•";
-  display:inline-block;
+  width:14px;
+  flex:0 0 14px;
   line-height:1.35;
   margin-top:2px;
   color:var(--ink);
 }
 
-/* To keep icon+text aligned after bullet */
-.ps-bullets li .ps-link{
-  margin-left:2px;
+/* Remove icon inside bullet links */
+.ps-bullets img{
+  display:none !important;
 }
 
-/* RIGHTS LIST */
-.rights-list{
-  margin:12px 0 18px;
-  padding-left:22px;
+/* Keep text aligned with single PS */
+.ps-bullets .ps-link{
+  margin-left:0;
 }
 
-.rights-item{
-  padding:10px 0;
-  border-top:1px dotted var(--line);
-}
+/* ================= ROW GROUP ================= */
 
-.rights-item:last-child{
-  border-bottom:1px dotted var(--line);
-}
-
-.right-title{ font-weight:800; }
-.right-sep{ font-weight:800; }
-
-.between-note{
-  margin:22px 0 40px;
-  color:var(--ink);
-}
-
-/* ===== DataTables tweaks to match your screenshot ===== */
-
-/* Make DataTables controls look clean */
-.dt-container .dt-length,
-.dt-container .dt-search{
-  margin-bottom:10px;
-}
-
-.dt-container .dt-search input{
-  border:1px solid var(--line) !important;
-  border-radius:10px !important;
-  padding:10px 12px !important;
-  outline:none !important;
-}
-
-.dt-container .dt-length select{
-  border:1px solid var(--line) !important;
-  border-radius:10px !important;
-  padding:8px 10px !important;
-  outline:none !important;
-}
-
-/* RowGroup header row = light blue bar */
 tr.dtrg-group td{
   background:var(--group) !important;
   font-weight:800;
   color:#0b1f4a;
   border-top:1px solid #b5d5ff !important;
   border-bottom:1px solid #b5d5ff !important;
-  padding:12px 12px !important;
+  padding:12px !important;
 }
 
-/* Remove any weird spacing from RowGroup rows */
-tr.dtrg-group td{
-  white-space:nowrap;
-}
-
-/* Hide the Category column (it is already hidden by DataTables, but just in case) */
+/* Hide category column */
 .records th.col-cat,
 .records td:nth-child(5){
   display:none;
+}
+
+/* ================= DATATABLES ================= */
+
+.dt-container .dt-search input{
+  border:1px solid var(--line) !important;
+  border-radius:10px !important;
+  padding:10px 12px !important;
+}
+
+.dt-container .dt-length select{
+  border:1px solid var(--line) !important;
+  border-radius:10px !important;
+  padding:8px 10px !important;
 }
