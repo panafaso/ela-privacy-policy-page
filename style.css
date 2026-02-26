@@ -24,7 +24,7 @@ body{
   line-height:1.6;
 }
 
-/* ================= HEADER ================= */
+
 
 .eu-bar{
   background:#3f3f46;
@@ -94,7 +94,6 @@ body{
   font-size:14px;
 }
 
-/* ================= BREADCRUMBS ================= */
 
 .breadcrumbs{
   background:#fff;
@@ -118,7 +117,7 @@ body{
   padding:0 8px;
 }
 
-/* ================= LAYOUT ================= */
+
 
 .page-inner{
   max-width:1200px;
@@ -134,7 +133,7 @@ body{
   .toc{ position:static; }
 }
 
-/* ================= TOC ================= */
+
 
 .toc{
   position:sticky;
@@ -181,7 +180,6 @@ body{
   outline:2px solid #c6dcff;
 }
 
-/* ================= TITLES ================= */
 
 .page-title{
   font-size:56px;
@@ -200,7 +198,7 @@ body{
   margin:10px 0 24px;
 }
 
-/* ================= RIGHTS ================= */
+
 
 .rights-list{
   margin:12px 0 18px;
@@ -221,7 +219,7 @@ body{
   font-weight:800;
 }
 
-/* ================= TABLE ================= */
+
 
 .table-wrap{ overflow:auto; }
 
@@ -265,7 +263,7 @@ body{
 .col-ps{ width:260px; }
 .col-cat{ width:0; }
 
-/* ================= PDF LINKS ================= */
+
 
 .pdf-svg{
   width:18px;
@@ -283,7 +281,7 @@ body{
   font-size:14px;
 }
 
-/* ================= MULTIPLE PS BULLETS ================= */
+
 
 .ps-bullets{
   margin:0;
@@ -307,7 +305,7 @@ body{
   display:none !important;
 }
 
-/* ================= ROW GROUP ================= */
+
 
 tr.dtrg-group td{
   background:var(--group) !important;
@@ -324,7 +322,7 @@ tr.dtrg-group td{
   display:none;
 }
 
-/* ================= BACK TO TOP ================= */
+
 
 #backToTop{
   position:fixed;
