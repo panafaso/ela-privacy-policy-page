@@ -114,11 +114,13 @@ $(function () {
       else backBtn.classList.remove('show');
     };
 
-    window.addEventListener('scroll', toggleBackToTop, { passive: true });
-    toggleBackToTop();
+    window.addEventListener('scroll', () => {
+  // εμφανίζεται αφού περάσεις περίπου τη μέση της σελίδας
+  const showAfter = document.documentElement.scrollHeight * 0.5;
 
-    backBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  if (window.scrollY > showAfter) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
   }
 });
