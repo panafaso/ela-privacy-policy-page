@@ -1,7 +1,5 @@
 $(function () {
-  /* =========================
-     1) DATATABLES / ROWGROUP
-  ========================== */
+  
   const groupColumn = 4; // Category hidden column (5th column)
 
   const table = $('#registerTable').DataTable({
@@ -37,9 +35,7 @@ $(function () {
     }
   });
 
-  /* =========================
-     2) TOC ACTIVE + SMOOTH SCROLL (offset)
-  ========================== */
+ 
   const headerOffset = 110;
 
   const tocLinks = Array.from(document.querySelectorAll('.toc-list a[href^="#"]'))
@@ -90,9 +86,6 @@ $(function () {
     setActiveToc(tocLinks[0].getAttribute('href'));
   }
 
-  /* =========================
-     3) BACK TO TOP (show/hide + click)
-  ========================== */
   const backBtn = document.getElementById('backToTop');
 
   if (backBtn) {
