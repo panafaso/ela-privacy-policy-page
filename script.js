@@ -101,3 +101,62 @@ $(function () {
   }
 
 });
+
+/* Smooth scroll παντού */
+html { scroll-behavior: smooth; }
+
+/* Fix: όταν έχεις sticky header (αν χρειάζεται), να μη “κόβεται” ο τίτλος */
+.section { scroll-margin-top: 90px; }  /* άλλαξέ το αν θες πιο πολύ/λίγο */
+
+/* TOC active highlight (όπως screenshot) */
+.toc-list a{
+  transition: background-color .15s ease, font-weight .15s ease;
+}
+
+.toc-list a.active{
+  background:#dbe8ff;
+  font-weight:700;
+  color:var(--nav2);
+}
+
+/* Breadcrumbs πιο “καθαρά” (να μη φαίνεται “τελος”) */
+.breadcrumbs{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.breadcrumbs-inner{
+  padding:10px 16px;   /* πιο “σφιχτό” */
+  margin:0 auto;
+  max-width:1200px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* Back to top button */
+.back-to-top{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  border:0;
+  border-radius:14px;
+  background:#0a58ca;
+  color:#fff;
+  font-weight:700;
+  padding:12px 14px;
+  cursor:pointer;
+  box-shadow:0 12px 24px rgba(0,0,0,.18);
+  display:none; /* θα το ανοίγει το JS */
+  align-items:center;
+  gap:10px;
+  z-index:9999;
+}
+
+.back-to-top svg{
+  width:22px;
+  height:22px;
+}
+
+.back-to-top.show{
+  display:flex;
+}
