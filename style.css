@@ -361,9 +361,9 @@ background:#f8f9fb;              /* ✅ ΑΣΠΡΟ μέσα */
 }
 
 .contact-card h3{
-  margin:0 0 28px;
-  font-size:22px;
-  font-weight:800;   /* πιο bold */
+  margin:0 0 20px;
+  font-size:18px;
+  font-weight:700;   /* πιο bold */
   color:#0b1f4a;     /* EU blue */
 }
 
