@@ -344,3 +344,47 @@ tr.dtrg-group td{
   align-items:center;
   gap:10px;
 }
+
+.contacts-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px; /* ίδιο περίπου με EU spacing */
+  margin-top:24px;
+}
+
+.contact-card{
+  background:#f3f4f6; /* ίδιο γκρι με EU cards */
+  border:1px solid #d1d5db;
+  border-radius:14px;
+  padding:32px; /* 👉 βασικό EU padding */
+  min-height:300px;
+}
+
+/* τίτλος */
+.contact-card h3{
+  margin:0 0 20px;
+  font-size:20px;
+  font-weight:700;
+  color:#1f2937;
+}
+
+/* περιγραφή */
+.contact-card p{
+  margin:0 0 14px;
+  font-size:17px;
+  line-height:1.7;
+  color:#111827;
+}
+
+/* links */
+.contact-card a{
+  color:#0a58ca;
+  text-decoration:underline;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .contacts-grid{
+    grid-template-columns:1fr;
+  }
+}
