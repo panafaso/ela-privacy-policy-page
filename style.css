@@ -353,7 +353,7 @@ tr.dtrg-group td{
 }
 
 .contact-card{
-  background:#ffffff;              /* ✅ ΑΣΠΡΟ μέσα */
+background:#f8f9fb;              /* ✅ ΑΣΠΡΟ μέσα */
   border:1px solid #d1d5db;        /* ίδιο γκρι περίγραμμα */
   border-radius:18px;              /* λίγο πιο rounded */
   padding:48px;                    /* πιο μεγάλο padding */
