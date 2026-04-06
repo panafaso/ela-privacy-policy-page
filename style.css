@@ -353,32 +353,29 @@ tr.dtrg-group td{
 }
 
 .contact-card{
-  background:#f3f4f6; /* ίδιο γκρι με EU cards */
-  border:1px solid #d1d5db;
-  border-radius:14px;
-  padding:32px; /* 👉 βασικό EU padding */
-  min-height:300px;
+  background:#ffffff;              /* ✅ ΑΣΠΡΟ μέσα */
+  border:1px solid #d1d5db;        /* ίδιο γκρι περίγραμμα */
+  border-radius:18px;              /* λίγο πιο rounded */
+  padding:48px;                    /* πιο μεγάλο padding */
+  min-height:360px;
 }
 
-/* τίτλος */
 .contact-card h3{
-  margin:0 0 20px;
-  font-size:20px;
-  font-weight:700;
-  color:#1f2937;
+  margin:0 0 28px;
+  font-size:22px;
+  font-weight:800;   /* πιο bold */
+  color:#0b1f4a;     /* EU blue */
 }
 
-/* περιγραφή */
 .contact-card p{
-  margin:0 0 14px;
-  font-size:17px;
+  margin:0 0 16px;
+  font-size:18px;
   line-height:1.7;
   color:#111827;
 }
 
-/* links */
 .contact-card a{
-  color:#0a58ca;
+  color:#0b7db8;
   text-decoration:underline;
 }
 
@@ -387,4 +384,10 @@ tr.dtrg-group td{
   .contacts-grid{
     grid-template-columns:1fr;
   }
+}
+
+.contacts-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
 }
