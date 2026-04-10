@@ -379,6 +379,14 @@ background:#f8f9fb;              /* ✅ ΑΣΠΡΟ μέσα */
   text-decoration:underline;
 }
 
+.contact-card a:hover{
+  color:blue;
+}
+
+a:hover{
+  color:blue;
+}
+
 /* responsive */
 @media (max-width: 900px){
   .contacts-grid{
