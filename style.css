@@ -231,7 +231,7 @@ body{
 }
 
 .records thead th{
-  background:#f6f7f9;
+  background:#0b1f4a !important;
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   padding:12px;
