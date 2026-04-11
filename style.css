@@ -448,6 +448,6 @@ h1{
   margin: 0;
 }
 
-.section + .section{
+.main h2:not(:first-child){
   margin-top: 20px;
 }
