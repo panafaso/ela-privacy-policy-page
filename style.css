@@ -464,3 +464,27 @@ table.dataTable tbody tr.dtrg-group > td{
 .content-gap{
   padding-top: 24px !important;
 }
+
+.records,
+.records th,
+.records td,
+.records a,
+.records li{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size:14px !important;
+  line-height:1.45;
+  color:#1f2937;
+}
+
+.records thead th{
+  font-size:14px !important;
+  font-weight:700;
+  line-height:1.35;
+}
+
+table.dataTable tbody tr.dtrg-group > th,
+table.dataTable tbody tr.dtrg-group > td{
+  font-size:15px !important;
+  line-height:1.35;
+  font-weight:700 !important;
+}
