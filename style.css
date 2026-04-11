@@ -308,12 +308,12 @@ body{
 
 
 
-tr.dtrg-group td{
-  background:var(--group) !important;
-  font-weight:800;
-  color:#0b1f4a;
-  border-top:1px solid #b5d5ff !important;
-  border-bottom:1px solid #b5d5ff !important;
+table.dataTable > tbody > tr.dtrg-group > td{
+  background:#d7e7f7 !important;
+  color:#0b1f4a !important;
+  font-weight:700 !important;
+  border-top:1px solid #c3d9ee !important;
+  border-bottom:1px solid #c3d9ee !important;
   padding:12px !important;
 }
 
@@ -401,13 +401,4 @@ a:hover{
   gap:24px;
 }
 
-table.dataTable tbody tr.dtrg-group td,
-.records tbody tr.dtrg-group td,
-tr.dtrg-group td{
-  background:#d7e7f7 !important;
-  color:#0b1f4a !important;
-  font-weight:700 !important;
-  border-top:1px solid #c3d9ee !important;
-  border-bottom:1px solid #c3d9ee !important;
-  padding:12px !important;
-}
+
