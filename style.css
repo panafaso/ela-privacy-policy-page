@@ -408,3 +408,6 @@ table.dataTable tbody tr.dtrg-group > td{
   padding:12px !important;
 }
 
+.rights-list li::marker{
+  color:#8b1e3f !important;
+}
