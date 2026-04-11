@@ -90,7 +90,10 @@ $(function () {
 
 if (backBtn) {
   const updateBackToTop = () => {
-    const showAfter = 200; // εμφανίζεται νωρίς
+    const scrollableHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const showAfter = scrollableHeight * 0.2; // 20%
     backBtn.classList.toggle('show', window.scrollY > showAfter);
   };
 
@@ -101,4 +104,3 @@ if (backBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
-});
