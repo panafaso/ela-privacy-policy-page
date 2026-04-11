@@ -36,6 +36,13 @@ $(function () {
     .map(a => document.querySelector(a.getAttribute('href')))
     .filter(Boolean);
 
+  sections.forEach((sec, index) => {
+  sec.classList.add('content-section');
+  if (index === 0) {
+    sec.classList.add('content-section-first');
+  }
+});
+
   function setActiveToc(targetId) {
     tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === targetId));
   }
