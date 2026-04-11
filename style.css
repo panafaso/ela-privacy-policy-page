@@ -182,14 +182,12 @@ body{
 
 
 .page-title{
-  font-size:clamp(40px, 4.8vw, 62px);
-  line-height:1.02;
-  letter-spacing:-0.035em;
+  font-size:56px;
+  line-height:1.05;
+  letter-spacing:-0.02em;
   font-weight:700;
   color:#0f172a;
-  margin:0 0 20px;
-  max-width:15ch;
-  text-wrap:balance;
+  margin:0 0 28px;
 }
 
 .section{
@@ -198,14 +196,12 @@ body{
 }
 
 .section-title{
-  font-size:clamp(30px, 3.4vw, 46px);
+  font-size:clamp(40px, 4.2vw, 56px);
   line-height:1.12;
-  letter-spacing:-0.02em;
+  letter-spacing:-0.025em;
   font-weight:300;
   color:#1f2937;
-  margin:0 0 18px;
-  max-width:22ch;
-  text-wrap:balance;
+  margin:0 0 24px;
 }
 
 
