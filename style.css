@@ -182,9 +182,14 @@ body{
 
 
 .page-title{
-  font-size:56px;
+  font-size:clamp(40px, 4.8vw, 62px);
+  line-height:1.02;
+  letter-spacing:-0.035em;
   font-weight:700;
-  margin:10px 0 26px;
+  color:#0f172a;
+  margin:0 0 20px;
+  max-width:15ch;
+  text-wrap:balance;
 }
 
 .section{
@@ -193,11 +198,15 @@ body{
 }
 
 .section-title{
-  font-size:44px;
+  font-size:clamp(30px, 3.4vw, 46px);
+  line-height:1.12;
+  letter-spacing:-0.02em;
   font-weight:300;
-  margin:10px 0 24px;
+  color:#1f2937;
+  margin:0 0 18px;
+  max-width:22ch;
+  text-wrap:balance;
 }
-
 
 
 .rights-list{
