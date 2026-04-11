@@ -37,9 +37,8 @@ $(function () {
     .filter(Boolean);
 
   sections.forEach((sec, index) => {
-  sec.classList.add('content-section');
-  if (index === 0) {
-    sec.classList.add('content-section-first');
+  if (index > 0) {
+    sec.classList.add('content-gap');
   }
 });
 
