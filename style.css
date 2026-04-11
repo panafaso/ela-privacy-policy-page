@@ -522,3 +522,7 @@ table.dataTable tbody tr:last-child td:last-child{
 .dataTables_wrapper{
   margin-bottom: 24px;
 }
+
+.main h2:not(:first-child){
+  margin-top: 40px !important;
+}
