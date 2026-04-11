@@ -454,7 +454,7 @@ table.dataTable tbody tr.dtrg-group > td{
 
 .records li::marker{
   color:#111827 !important;
-  font-size:10px; /* πιο μικρά bullets */
+  font-size:13px; /* πιο μικρά bullets */
 }
 
 
