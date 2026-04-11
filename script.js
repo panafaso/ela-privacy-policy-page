@@ -90,10 +90,7 @@ $(function () {
 
 if (backBtn) {
   const updateBackToTop = () => {
-    const scrollableHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
-
-    const showAfter = scrollableHeight * 0.2; // 20%
+    const showAfter = 120; // εμφανίζεται νωρίς
     backBtn.classList.toggle('show', window.scrollY > showAfter);
   };
 
