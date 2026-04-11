@@ -88,18 +88,17 @@ $(function () {
 
   const backBtn = document.getElementById('backToTop');
 
-  if (backBtn) {
-    const updateBackToTop = () => {
-      // εμφανίζεται μετά το ~50% της σελίδας
-      const showAfter = document.documentElement.scrollHeight * 0.2;
-      backBtn.classList.toggle('show', window.scrollY > showAfter);
-    };
+if (backBtn) {
+  const updateBackToTop = () => {
+    const showAfter = 120; // εμφανίζεται νωρίς
+    backBtn.classList.toggle('show', window.scrollY > showAfter);
+  };
 
-    updateBackToTop();
-    window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
 
-    backBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 });
