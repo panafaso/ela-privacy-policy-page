@@ -478,24 +478,20 @@ table.dataTable tbody tr.dtrg-group > td{
   color: var(--link) !important;
 }
 
-.table-wrap{
+.dataTables_wrapper .table-wrap{
   overflow:hidden;
   border-radius:18px;
 }
 
-.records{
-  width:100% !important;
-  border-collapse:separate;
-  border-spacing:0;
-  min-width:920px;
+.dataTables_wrapper table.records{
   border-radius:18px;
   overflow:hidden;
 }
 
-.records thead th:first-child{
+.dataTables_wrapper table.records thead th:first-child{
   border-top-left-radius:18px;
 }
 
-.records thead th:last-child{
+.dataTables_wrapper table.records thead th:last-child{
   border-top-right-radius:18px;
 }
