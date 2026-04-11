@@ -8,10 +8,10 @@ $(function () {
     lengthMenu: [[50, 100], [50, 100]],
     order: [[groupColumn, 'asc'], [0, 'asc']],
     columnDefs: [
-      { targets: groupColumn, visible: false, orderable: false },
-      { targets: [2, 3], orderable: false, searchable: false },
-      { targets: [0, 1], orderable: true }
-    ],
+  { targets: groupColumn, visible: false, orderable: false, searchable: false },
+  { targets: [1, 2, 3], orderable: false, searchable: false },
+  { targets: [0], orderable: true, searchable: true }
+],,
     rowGroup: {
       dataSrc: groupColumn,
       startRender: function (rows, group) {
