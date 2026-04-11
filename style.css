@@ -434,3 +434,18 @@ h1{
   padding-bottom: 14px;
   border-bottom: 4px solid #8b1e3f;
 }
+
+.page-hero{
+  background: linear-gradient(to bottom, #dce8f2 0%, #edf3f7 52%, #ffffff 100%);
+  padding: 34px 36px 48px;
+  margin: 0 0 28px;
+}
+
+.page-title{
+  font-size: clamp(42px, 4.2vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: #0b1f4a;
+  margin: 0;
+}
