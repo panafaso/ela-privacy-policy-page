@@ -460,7 +460,7 @@ table.dataTable tbody tr.dtrg-group > td{
 
 .page-hero{
   background: linear-gradient(to bottom, #dce8f2 0%, #edf3f7 52%, #ffffff 100%);
-  padding: 34px 36px 48px;
+  padding: 34px 36px 48px 20px;
   margin: 0 0 28px;
 }
 
