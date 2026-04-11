@@ -447,3 +447,7 @@ h1{
   color: #0b1f4a;
   margin: 0;
 }
+
+.section + .section{
+  margin-top: 20px;
+}
