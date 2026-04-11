@@ -11,7 +11,7 @@ $(function () {
   { targets: groupColumn, visible: false, orderable: false, searchable: false },
   { targets: [1, 2, 3], orderable: false, searchable: false },
   { targets: [0], orderable: true, searchable: true }
-],,
+],
     rowGroup: {
       dataSrc: groupColumn,
       startRender: function (rows, group) {
