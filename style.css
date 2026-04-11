@@ -392,19 +392,8 @@ a:hover{
   gap:24px;
 }
 
-table.dataTable tbody tr.dtrg-group,
-table.dataTable tbody tr.dtrg-group:hover,
-table.dataTable.display tbody tr.dtrg-group,
-table.dataTable.stripe tbody tr.dtrg-group,
-table.dataTable.order-column tbody tr.dtrg-group{
-  background:#d7e7f7 !important;
-}
-
-table.dataTable tbody tr.dtrg-group > td,
-table.dataTable tbody tr.dtrg-group:hover > td,
-table.dataTable.display tbody tr.dtrg-group > td,
-table.dataTable.stripe tbody tr.dtrg-group > td,
-table.dataTable.order-column tbody tr.dtrg-group > td{
+table.dataTable tbody tr.dtrg-group > th,
+table.dataTable tbody tr.dtrg-group > td{
   background:#d7e7f7 !important;
   background-color:#d7e7f7 !important;
   color:#0b1f4a !important;
