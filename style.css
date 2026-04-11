@@ -193,7 +193,7 @@ h1{
 
 .section-title,
 h2{
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(26px, 2.6vw, 34px);
   line-height: 1.18;
   letter-spacing: -0.02em;
   font-weight: 400;
