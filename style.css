@@ -395,11 +395,6 @@ a:hover{
   }
 }
 
-.contacts-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
 
 table.dataTable tbody tr.dtrg-group > th,
 table.dataTable tbody tr.dtrg-group > td{
@@ -410,4 +405,7 @@ table.dataTable tbody tr.dtrg-group > td{
   border-top:1px solid #c3d9ee !important;
   border-bottom:1px solid #c3d9ee !important;
   padding:12px !important;
+}
+h1, h2{
+  text-wrap:balance;
 }
