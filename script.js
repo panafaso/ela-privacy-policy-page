@@ -90,7 +90,7 @@ $(function () {
 
 if (backBtn) {
   const updateBackToTop = () => {
-    const showAfter = 120; // εμφανίζεται νωρίς
+    const showAfter = 150; // εμφανίζεται νωρίς
     backBtn.classList.toggle('show', window.scrollY > showAfter);
   };
 
