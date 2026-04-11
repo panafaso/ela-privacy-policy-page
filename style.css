@@ -308,15 +308,6 @@ body{
 
 
 
-table.dataTable > tbody > tr.dtrg-group > td{
-  background:#d7e7f7 !important;
-  color:#0b1f4a !important;
-  font-weight:700 !important;
-  border-top:1px solid #c3d9ee !important;
-  border-bottom:1px solid #c3d9ee !important;
-  padding:12px !important;
-}
-
 /* hide category fallback */
 .records th.col-cat,
 .records td:nth-child(5){
@@ -401,4 +392,24 @@ a:hover{
   gap:24px;
 }
 
+table.dataTable tbody tr.dtrg-group,
+table.dataTable tbody tr.dtrg-group:hover,
+table.dataTable.display tbody tr.dtrg-group,
+table.dataTable.stripe tbody tr.dtrg-group,
+table.dataTable.order-column tbody tr.dtrg-group{
+  background:#d7e7f7 !important;
+}
 
+table.dataTable tbody tr.dtrg-group > td,
+table.dataTable tbody tr.dtrg-group:hover > td,
+table.dataTable.display tbody tr.dtrg-group > td,
+table.dataTable.stripe tbody tr.dtrg-group > td,
+table.dataTable.order-column tbody tr.dtrg-group > td{
+  background:#d7e7f7 !important;
+  background-color:#d7e7f7 !important;
+  color:#0b1f4a !important;
+  font-weight:700 !important;
+  border-top:1px solid #c3d9ee !important;
+  border-bottom:1px solid #c3d9ee !important;
+  padding:12px !important;
+}
