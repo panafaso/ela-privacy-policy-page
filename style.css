@@ -452,8 +452,9 @@ table.dataTable tbody tr.dtrg-group > td{
   padding:12px !important;
 }
 
-.rights-list li::marker{
-  color:#8b1e3f !important;
+.records li::marker{
+  color:#111827 !important;
+  font-size:10px; /* πιο μικρά bullets */
 }
 
 
