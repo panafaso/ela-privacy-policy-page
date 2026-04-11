@@ -91,7 +91,7 @@ $(function () {
   if (backBtn) {
     const updateBackToTop = () => {
       // εμφανίζεται μετά το ~50% της σελίδας
-      const showAfter = document.documentElement.scrollHeight * 0.5;
+      const showAfter = document.documentElement.scrollHeight * 0.2;
       backBtn.classList.toggle('show', window.scrollY > showAfter);
     };
 
