@@ -465,29 +465,15 @@ table.dataTable tbody tr.dtrg-group > td{
   padding-top: 24px !important;
 }
 
-.records thead th,
-.records tbody td,
-.records tbody td a,
-.records tbody td li{
-  font-family: inherit !important;
-  line-height: 1.5 !important;
+.records a,
+.records .doc-link,
+.records .ps-bullets a{
+  color: var(--link) !important;
+  text-decoration: none;
 }
 
-.records tbody td,
-.records tbody td a,
-.records tbody td li{
-  font-size: 13px !important;
-  color: #1f2937;
-}
-
-.records thead th{
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  line-height: 1.35 !important;
-}
-
-table.dataTable tbody tr.dtrg-group > th,
-table.dataTable tbody tr.dtrg-group > td{
-  font-size: 15px !important;
-  line-height: 1.35 !important;
+.records a:hover,
+.records .doc-link:hover,
+.records .ps-bullets a:hover{
+  color: var(--link) !important;
 }
