@@ -300,6 +300,10 @@ body{
   margin:8px 0;
 }
 
+.ps-bullets li::marker{
+  color:#8b1e3f; /* μπορντό ELA */
+}
+
 .ps-bullets a{
   font-weight:600;
   color:var(--link);
