@@ -268,7 +268,10 @@ h1{
 
 
 
-.table-wrap{ overflow:auto; }
+.table-wrap{
+  overflow:hidden;
+  border-radius:18px;
+}
 
 .records{
   width:100% !important;
@@ -478,20 +481,23 @@ table.dataTable tbody tr.dtrg-group > td{
   color: var(--link) !important;
 }
 
-.dataTables_wrapper .table-wrap{
-  overflow:hidden;
-  border-radius:18px;
+.table-wrap{
+  overflow:hidden !important;
+  border-radius:18px !important;
 }
 
-.dataTables_wrapper table.records{
-  border-radius:18px;
-  overflow:hidden;
+.records{
+  width:100% !important;
+  border-collapse:separate;
+  border-spacing:0;
+  min-width:920px;
+  border-radius:18px 18px 0 0;
 }
 
-.dataTables_wrapper table.records thead th:first-child{
-  border-top-left-radius:18px;
+.records thead th:first-child{
+  border-top-left-radius:18px !important;
 }
 
-.dataTables_wrapper table.records thead th:last-child{
-  border-top-right-radius:18px;
+.records thead th:last-child{
+  border-top-right-radius:18px !important;
 }
