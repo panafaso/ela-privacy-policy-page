@@ -518,3 +518,7 @@ table.dataTable tbody tr:last-child td:first-child{
 table.dataTable tbody tr:last-child td:last-child{
   border-bottom-right-radius:18px !important;
 }
+
+.dataTables_wrapper{
+  margin-bottom: 24px;
+}
