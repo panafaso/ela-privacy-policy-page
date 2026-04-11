@@ -182,28 +182,29 @@ body{
 
 
 .page-title{
-  font-size:56px;
-  line-height:1.05;
-  letter-spacing:-0.02em;
+  font-size:clamp(42px, 4.2vw, 58px);
+  line-height:1.08;
+  letter-spacing:-0.025em;
   font-weight:700;
-  color:#0f172a;
+  color:#0b1f4a;
   margin:0 0 28px;
 }
 
-.section{
-  padding:48px 0;
-  scroll-margin-top:110px;
+.section-title{
+  font-size:clamp(32px, 3.2vw, 46px);
+  line-height:1.14;
+  letter-spacing:-0.02em;
+  font-weight:300;
+  color:#1d2438;
+  margin:0 0 22px;
 }
 
-.section-title{
-  font-size:clamp(40px, 4.2vw, 56px);
-  line-height:1.12;
-  letter-spacing:-0.025em;
-  font-weight:300;
-  color:#1f2937;
+.main p{
+  font-size:18px;
+  line-height:1.65;
+  color:#14213d;
   margin:0 0 24px;
 }
-
 
 .rights-list{
   margin:12px 0 18px;
